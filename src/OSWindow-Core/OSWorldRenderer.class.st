@@ -266,7 +266,7 @@ OSWorldRenderer >> windowExtent [
 
 { #category : #'scale factor' }
 OSWorldRenderer >> windowScaleFactor [
-	^ osWindow ifNil: [ 1 ] ifNotNil: [ osWindow screenScaleFactor max: 1 ]
+	^ osWindow ifNil: [ 1 ] ifNotNil: [ osWindow screenScaleFactor min: 1 ]
 ]
 
 { #category : #accessing }
