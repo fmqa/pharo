@@ -96,7 +96,7 @@ Class {
 		'mouseDownPoint',
 		'completionEngine',
 		'maxLength',
-		'findReplaceService'
+		'findReplaceService',
 		'grow'
 	],
 	#classVars : [
