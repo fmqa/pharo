@@ -967,6 +967,20 @@ RubAbstractTextArea >> grabbedAllowed [
 	^ scrollPane isNil
 ]
 
+{ #category : #accessing }
+RubAbstractTextArea >> grow [
+	"Answer whether the area should grow horizontally."
+
+	^ grow
+]
+
+{ #category : #accessing }
+RubAbstractTextArea >> grow: aBool [
+	"Set whether the area should grow horizontally."
+
+	grow := aBool
+]
+
 { #category : #geometry }
 RubAbstractTextArea >> handleBoundsChange: aBlock [
 	| oldBounds |
@@ -986,7 +1000,7 @@ RubAbstractTextArea >> handleEdit: editBlock [
 
 	editBlock value.
 	"Fit to width on edit"
-	(self grow isNotNil & self grow) ifTrue: [
+	grow ifTrue: [
 		self width: (1 max: self maxLineWidth + self margins left + self margins right)
 	].
 	self selectionChanged	"Note new selection"
@@ -1118,6 +1132,7 @@ RubAbstractTextArea >> highlightMessageSend [
 { #category : #initialization }
 RubAbstractTextArea >> initialize [
 	super initialize.
+	grow := false.
 	self compose.
 	self addCursor.
 	self plugFindReplace.
@@ -1271,20 +1286,6 @@ RubAbstractTextArea >> maxLength: anInteger [
 	"Set the maximum number of characters that may be typed."
 
 	maxLength := anInteger max: 0
-]
-
-{ #category : #accessing }
-RubAbstractTextArea >> grow [
-	"Answer whether the area should grow horizontally."
-
-	^ grow
-]
-
-{ #category : #accessing }
-RubAbstractTextArea >> grow: aBool [
-	"Set whether the area should grow horizontally."
-
-	grow := aBool
 ]
 
 { #category : #measuring }
