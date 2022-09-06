@@ -2,7 +2,7 @@
 I am ClyNoChildren, an exception indicating that an operation on a parent in a parent-child structure failed due to the absence of child elements. 
 "
 Class {
-	#name : #ClyNoChildrenError,
+	#name : #ClyNoChildren,
 	#superclass : #Error,
 	#instVars : [
 		'parent'
@@ -11,7 +11,7 @@ Class {
 }
 
 { #category : #signalling }
-ClyNoChildrenError class >> signalFor: aParentObject [
+ClyNoChildren class >> signalFor: aParentObject [
 	"Create and signal a ClyNotFound exception for aParentObject in the default receiver."
 			
 	^ self new
@@ -20,13 +20,13 @@ ClyNoChildrenError class >> signalFor: aParentObject [
 ]
 
 { #category : #accessing }
-ClyNoChildrenError >> parent [
+ClyNoChildren >> parent [
 
 	^ parent
 ]
 
 { #category : #accessing }
-ClyNoChildrenError >> parent: anObject [
+ClyNoChildren >> parent: anObject [
 
 	parent := anObject
 ]

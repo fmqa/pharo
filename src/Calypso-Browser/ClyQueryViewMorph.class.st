@@ -741,7 +741,7 @@ ClyQueryViewMorph >> selectionRejected: announcement [
 		^ self
 	].
 	announcement direction = #right ifTrue: [
-		self selection items do: [ :item | item supportsExpansion ifTrue: [ item expand ] ]
+		self selection items do: [ :item | [ item expand ] on: ClyNoChildren do: ["ignored"] ]
 	]
 ]
 
