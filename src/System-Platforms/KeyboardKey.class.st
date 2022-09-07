@@ -975,6 +975,12 @@ KeyboardKey class >> macOSVirtualKeyTable [
 ]
 
 { #category : #accessing }
+KeyboardKey class >> menu [
+
+	^ self named: 'MENU'
+]
+
+{ #category : #accessing }
 KeyboardKey class >> minus [
 	
 	^ self named: 'MINUS'
